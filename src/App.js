@@ -4,10 +4,11 @@ import AppHeader from "./Header/header";
 import MicroFrontend from "./Container/Container";
 // import About from './About';
 
-const { REACT_APP_HOSPITAL_HOST: hospitalHost } = process.env;
+console.log({ env: process?.env });
+const { REACT_APP_HOSPITAL_HOST: hospitalHost } = process.env || {};
 
 let numRestaurants = 0;
-fetch(`${process.env.REACT_APP_HOSPITAL_HOST}/hospital.json`)
+fetch(`${process?.env?.REACT_APP_HOSPITAL_HOST}/hospital.json`)
   .then((res) => res.json())
   .then((hospital) => {
     console.log({ hospital });
