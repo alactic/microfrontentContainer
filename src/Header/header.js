@@ -9,7 +9,7 @@ const AppHeader = () => (
           <NavLink to="/">Browse restaurants</NavLink>
         </li>
         <li>
-          <NavLink to="/pms">Surprise me</NavLink>
+          <NavLink to="/redux">Surprise me</NavLink>
         </li>
         <li>
           <NavLink to="/createreactapp">Create React App</NavLink>
