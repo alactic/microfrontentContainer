@@ -7,7 +7,6 @@ import './App.css'
 
 console.log({ env: process?.env });
 const { REACT_APP_HOSPITAL_HOST: hospitalHost,
-   REACT_APP_PMS_HOST: pmsHost,
    REACT_APP_REDUX_HOST: reduxHost
    } = process.env || {};
 
