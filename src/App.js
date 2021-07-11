@@ -5,7 +5,7 @@ import MicroFrontend from "./Container/Container";
 // import About from './About';
 
 console.log({ env: process?.env });
-const { REACT_APP_HOSPITAL_HOST: hospitalHost } = process.env || {};
+const { REACT_APP_HOSPITAL_HOST: hospitalHost, REACT_APP_PMS_HOST: pmsHost } = process.env || {};
 
 let numRestaurants = 0;
 fetch(`${process?.env?.REACT_APP_HOSPITAL_HOST}/hospital.json`)
@@ -17,12 +17,16 @@ fetch(`${process?.env?.REACT_APP_HOSPITAL_HOST}/hospital.json`)
 const Hospital = ({ history }) => (
   <MicroFrontend history={history} host={hospitalHost} name="Hospitalapp" />
 );
+const PMS = ({ history }) => (
+  <MicroFrontend history={history} host={pmsHost} name="PMSapp" />
+);
 const App = () => (
   <BrowserRouter>
     <React.Fragment>
       <AppHeader />
       <Switch>
         <Route exact path="/" component={Hospital} />
+        <Route exact path="/pms" component={PMS} />
       </Switch>
     </React.Fragment>
   </BrowserRouter>
